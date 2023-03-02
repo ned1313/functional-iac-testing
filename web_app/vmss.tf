@@ -75,6 +75,10 @@ resource "azurerm_linux_virtual_machine_scale_set" "main" {
 
   health_probe_id = azurerm_lb_probe.main.id
 
+  depends_on = [
+    azurerm_lb_rule.main
+  ]
+
 }
 
 # Azure Load Balancer
