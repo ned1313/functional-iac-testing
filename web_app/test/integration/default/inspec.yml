@@ -1,0 +1,16 @@
+name: default
+title: Default Tests
+version: 0.1.0
+attributes:
+  - name: lb_address_output
+    type: string
+    required: true
+    description: The Terraform configuration must have an equivalently named output
+  - name: lb_http_output
+    type: string
+    required: true
+    description: The Terraform configuration must have an equivalently named output
+  - name: terraform_state
+    type: string
+    required: true
+    description: The Terraform configuration under test must define the equivalently named output

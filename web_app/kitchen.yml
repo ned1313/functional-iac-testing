@@ -1,0 +1,31 @@
+driver:
+  name: terraform
+
+  root_module_directory: test/fixtures/wrapper
+
+  variable_files:
+    - testing.tfvars
+
+provisioner:
+  name: terraform
+
+platforms:
+  - name: azure
+      
+verifier:
+  name: terraform
+  systems:
+    - name: local
+      backend: local
+      
+      controls:
+        - http_check
+        - state_file
+
+suites:
+  - name: default
+    verifier:
+      inspec_tests:
+        - test/integration/default
+
+
